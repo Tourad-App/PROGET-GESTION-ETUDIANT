@@ -1,0 +1,132 @@
+ <div class="Div_affichage">
+               
+        <!--- Start afficher les informations du etudiants -->
+        
+        <div class="info_Etudiants">
+        
+            <div class="content_info">
+            
+                <div class="titre">
+                
+                    <h3>Voici les donner d' etudiant rechercher : </h3>
+                    
+                </div>
+                
+                <div class = "list_Affichage">
+            
+        <?php
+                    
+        if($utilisateur -> rowCount() > 0)
+        {
+            ?>
+                    
+                    <table class="info_Tables">
+                    
+                        <tr>
+                        
+                            <td>
+                                Matricule
+                            </td>
+                            <td>
+                                Nom
+                            </td>
+                            <td>
+                                DatNaissance
+                            </td>
+                            <td>
+                                Genre
+                            </td>
+                            <td>
+                                Filiere
+                            </td>
+                            <td>
+                                Niveau
+                            </td>
+                        
+                        </tr>
+            <?php
+        
+            while($ba = $utilisateur -> fetch())
+            {
+                ?>
+                        
+                        <tr>
+                        
+                            <td>
+                                
+                    <?= 
+                            'I'.$ba['Matricule'];
+                    ?>
+                                
+                            </td>
+                            <td>
+                                
+                     <?= 
+                            $ba['Nom'];
+                    ?>
+                                
+                            </td>
+                            <td>
+                                
+                    <?= 
+                            $ba['DatNaissance'];
+                    ?>
+                                
+                            </td>
+                            <td>
+                                
+                    <?= 
+                            $ba['Genre'];
+                    ?>
+                                
+                            </td>
+                            <td>
+                                
+                    <?= 
+                            $ba['Filiere'];
+                    ?>
+                                
+                            </td>
+                            <td>
+                                
+                    <?= 
+                            $ba['Niveau'];
+                    ?>
+                                
+                            </td>
+                     
+                        </tr>
+                        
+                            <?php 
+        }
+                        
+        ?>
+                        
+                    </table>
+              
+            <?php
+            
+        }
+                    else
+        {
+            echo "<div class='Header'>";
+                        echo "<h1 class='message_result'>cet etudiant n'existe pas</h1>";
+            echo "</div>";
+        }
+                        
+
+                    ?>
+          
+                </div>
+                
+                
+   
+                
+            </div>
+            
+        </div>
+        
+    <!--- End afficher les informations du etudiants -->
+            
+        
+        </div>
